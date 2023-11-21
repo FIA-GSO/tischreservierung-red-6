@@ -12,12 +12,12 @@ path_to_sqlite3_database = 'buchungssystem.sqlite'
 
 @app.route('/', methods=['GET'])
 def home():
-    return "<h1>Tischreservierung</h1><br>Freie Tische anfragen: <a href='http://127.0.0.1:5000/api/v1/anfragen?zeitpunkt=2022-02-02T18:15:00Z'>/api/v1/anfragen?zeitpunkt=2022-02-02T18:15:00Z</href>"
+    return "<h1>Tischreservierung</h1><br>Freie Tische anfragen: <a href='http://127.0.0.1:5000/api/v1/tische/frei?zeitpunkt=2022-02-02T18:15:00Z'>/api/v1/anfragen?zeitpunkt=2022-02-02T18:15:00Z</href>"
 
 
-@app.route('/api/v1/anfragen', methods=['GET'])
+@app.route('/api/v1/tische/frei', methods=['GET'])
 def anfragen():
-    """ Bsp. Aufruf http://127.0.0.1:5000/api/v1/anfragen?zeitpunkt=2022-02-02T18:15:00Z """
+    """ Bsp. Aufruf http://127.0.0.1:5000/api/v1/tische/frei?zeitpunkt=2022-02-02T18:15:00Z """
 
     query_parameters = request.args
     zeitpunkt = query_parameters.get('zeitpunkt')
